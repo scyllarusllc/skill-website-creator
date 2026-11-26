@@ -1,6 +1,6 @@
 # skill-website-creator
 
-A Claude Code skill that builds websites in the stack learned from the [Inbox Tend](../inboxtend) project:
+A Claude Code skill that builds websites in the stack learned from the Inbox Tend project:
 
 **FastAPI + Jinja2 + Tailwind CSS v4 + Font Awesome (self-hosted) + Stimulus + SQLite**, a strict CSP, single-admin auth
 (password and optional Google sign-in), and a systemd + Caddy deploy.
