@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="{% block description %}@@NAME@@{% endblock %}">
+  <meta name="theme-color" content="#4f46e5">
+  <title>{{ title }}</title>
+  <link rel="icon" type="image/svg+xml" href="/static/icons/favicon.svg">
+  <link rel="stylesheet" href="/static/vendor/fontawesome/css/fontawesome.min.css">
+  <link rel="stylesheet" href="/static/vendor/fontawesome/css/solid.min.css">
+  <link rel="stylesheet" href="/static/vendor/fontawesome/css/regular.min.css">
+  <link rel="stylesheet" href="/static/vendor/fontawesome/css/brands.min.css">
+  <link rel="stylesheet" href="/static/css/app.css">
+  {% block head %}{% endblock %}
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  {% include "_header.html" %}
+  <main id="main">
+    {% block content %}{% endblock %}
+  </main>
+  {% include "_footer.html" %}
+  <div id="notice" class="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="/static/js/stimulus-app.js"></script>
+  {% if signed_in %}<script src="/static/js/common.js" defer></script>{% endif %}
+  {% block scripts %}{% endblock %}
+</body>
+</html>

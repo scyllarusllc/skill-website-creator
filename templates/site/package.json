@@ -1,0 +1,16 @@
+{
+  "name": "@@SLUG@@",
+  "private": true,
+  "description": "@@NAME@@: build tooling for Tailwind CSS and vendored front-end assets.",
+  "scripts": {
+    "build:css": "tailwindcss -i web/src/app.css -o app/static/css/app.css --minify",
+    "watch:css": "tailwindcss -i web/src/app.css -o app/static/css/app.css --watch",
+    "vendor": "node scripts/vendor-assets.mjs"
+  },
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "7.3.1",
+    "@hotwired/stimulus": "3.2.2",
+    "@tailwindcss/cli": "4.3.5",
+    "tailwindcss": "4.3.5"
+  }
+}

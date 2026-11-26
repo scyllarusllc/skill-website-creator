@@ -1,0 +1,14 @@
+# Append to /etc/caddy/Caddyfile (back it up first), then:  caddy validate --config /etc/caddy/Caddyfile && systemctl reload caddy
+# Replace example.com. Caddy gets the certificate by itself. Behind Cloudflare use SSL mode "Full" (a missing site block here
+# shows up as Cloudflare error 525).
+http://example.com {
+	redir https://example.com{uri} permanent
+}
+
+http://www.example.com, www.example.com {
+	redir https://example.com{uri} permanent
+}
+
+example.com {
+	reverse_proxy 127.0.0.1:@@PORT@@
+}

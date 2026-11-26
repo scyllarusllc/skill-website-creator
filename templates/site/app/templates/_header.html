@@ -1,0 +1,15 @@
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/" aria-label="@@NAME@@ home"><span class="brand-mark" aria-hidden="true"><i class="fa-solid fa-feather"></i></span><span class="text-lg tracking-tight">@@NAME@@</span></a>
+    <nav class="primary-nav" aria-label="Main navigation">
+      {% for href, label, icon, _needs_sign_in in nav %}
+      <a class="nav-link" href="{{ href }}"{% if path == href %} aria-current="page"{% endif %}><i class="fa-solid {{ icon }}" aria-hidden="true"></i>{{ label }}</a>
+      {% endfor %}
+      {% if signed_in %}
+      <button id="logout" type="button"><i class="fa-solid fa-right-from-bracket" aria-hidden="true"></i>Sign out</button>
+      {% else %}
+      <a class="nav-link" href="/login"{% if path == '/login' %} aria-current="page"{% endif %}><i class="fa-solid fa-right-to-bracket" aria-hidden="true"></i>Sign in</a>
+      {% endif %}
+    </nav>
+  </div>
+</header>

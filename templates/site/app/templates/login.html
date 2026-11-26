@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="page-shell">
+  <div class="panel mx-auto mt-6 max-w-md">
+    <p class="eyebrow">Welcome back</p>
+    <h1>Sign in to @@NAME@@</h1>
+    <p class="mt-2 text-slate-600">Sign in with the administrator account.</p>
+    {% if google_enabled %}
+    <a id="google-login" class="button-link mt-6" href="/auth/google/start"><i class="fa-brands fa-google" aria-hidden="true"></i>Continue with Google</a>
+    {% endif %}
+    {% if google_enabled and password_enabled %}<p class="my-5 text-center text-sm text-slate-500">or</p>{% endif %}
+    {% if password_enabled %}
+    <form id="login-form" class="mt-6 space-y-4">
+      <div><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="username" required></div>
+      <div><label for="password">Password</label><input id="password" name="password" type="password" autocomplete="current-password" required></div>
+      <p id="login-status" class="text-sm text-rose-600" role="alert"></p>
+      <button type="submit" class="action w-full"><i class="fa-solid fa-right-to-bracket" aria-hidden="true"></i>Sign in</button>
+    </form>
+    {% endif %}
+    {% if not google_enabled and not password_enabled %}
+    <p class="callout mt-6">No sign-in method is set up. Set the admin email and password hash in <code>.env</code> (see README).</p>
+    {% endif %}
+    <p id="google-error" class="mt-4 text-sm text-rose-600" role="alert"></p>
+  </div>
+</div>
+{% endblock %}
+{% block scripts %}<script src="/static/js/login.js" defer></script>{% endblock %}

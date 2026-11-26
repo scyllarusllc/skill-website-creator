@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="page-shell">
+  <section class="page-intro">
+    <div>
+      <p class="eyebrow">Dashboard</p>
+      <h1>Hello, <span id="who">{{ email }}</span></h1>
+      <p class="intro-copy">This page needs a signed-in session. Build your product here.</p>
+    </div>
+  </section>
+  <section class="panel">
+    <div class="panel-heading"><h3><i class="fa-regular fa-envelope-open text-indigo-500" aria-hidden="true"></i>Example panel</h3><span class="panel-caption">One card style everywhere: .panel</span></div>
+    <p class="text-slate-600">Cards use <code>.panel</code>, badges <code>.badge</code>, the main action <code>.action</code> and destructive buttons <code>.danger</code>.</p>
+    <p class="mt-4 flex flex-wrap items-center gap-2"><span class="badge">neutral</span><span class="badge tone-ok">ok</span><span class="badge tone-warn">warning</span><span class="badge tone-bad">problem</span></p>
+  </section>
+</div>
+{% endblock %}

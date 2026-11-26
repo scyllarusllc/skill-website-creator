@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="page-shell max-w-3xl">
+  <section class="page-intro"><div><p class="eyebrow">Settings</p><h1>Settings</h1></div></section>
+  <form id="settings-form" class="panel space-y-4">
+    <div>
+      <label for="display_name">Display name</label>
+      <input id="display_name" name="display_name" type="text" maxlength="60" autocomplete="off">
+      <p class="section-hint mt-1">Example setting, stored in SQLite and validated on the server.</p>
+    </div>
+    <div class="flex justify-end"><button id="save-settings" type="submit" class="action"><i class="fa-solid fa-check" aria-hidden="true"></i>Save</button></div>
+  </form>
+</div>
+{% endblock %}
+{% block scripts %}<script src="/static/js/settings.js" defer></script>{% endblock %}

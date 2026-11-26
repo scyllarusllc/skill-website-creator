@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="page-shell">
+  <section class="page-intro">
+    <div>
+      <p class="eyebrow">Welcome</p>
+      <h1>@@NAME@@</h1>
+      <p class="intro-copy">Replace this with one sentence about what the site does and who it is for.</p>
+    </div>
+    <div class="flex gap-2">
+      <a class="action" href="/login"><i class="fa-solid fa-right-to-bracket" aria-hidden="true"></i>Sign in</a>
+    </div>
+  </section>
+  <section class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    {% for icon, heading, body in [
+      ('fa-bolt', 'Fast', 'Server-rendered pages and a small amount of JavaScript.'),
+      ('fa-lock', 'Safe by default', 'Strict content security policy, CSRF protection and hashed sessions.'),
+      ('fa-database', 'Simple storage', 'One SQLite file that is easy to back up.')] %}
+    <article class="panel"><h2 class="flex items-center gap-2"><i class="fa-solid {{ icon }} text-indigo-500" aria-hidden="true"></i>{{ heading }}</h2><p class="mt-2 text-slate-600">{{ body }}</p></article>
+    {% endfor %}
+  </section>
+</div>
+{% endblock %}

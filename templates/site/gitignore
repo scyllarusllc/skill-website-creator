@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+.venv/
+node_modules/
+.env
+.env.*
+!.env.example
+data/
+*.sqlite3
+*.sqlite3-wal
+*.sqlite3-shm
+.DS_Store
+client_secret*.json
+credentials*.json
+# app/static/css/app.css and app/static/vendor/ are generated but COMMITTED, so running the site needs no Node.
